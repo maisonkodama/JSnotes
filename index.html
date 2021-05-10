@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/7a5d9a758c.js" crossorigin="anonymous"></script>
+    <title>pkNotes</title>
+</head>
+
+<body>
+    <main>
+        <h1>pkNotes</h1>
+
+        <div class="noteForm">
+            <form action="" id="note" method="POST">
+                <div class="titleContainer">
+                    <label for="titleText">Title (optional)</label>
+                    <input type="text" id="titleText" class="titleInput">
+                </div>
+                <div>
+                    <label for="noteContent">Note</label>
+                    <br>
+                    <textarea name="noteContent" id="noteContent" class="noteInput" form="note" spellcheck="true"
+                        cols="30" rows="10" required></textarea>
+                </div>
+                <button type="reset" class="reset">Reset</button>
+                <button type="button" id="saveNote">Save</button>
+                <span class="isSaved isHidden"> *Saved*</span>
+            </form>
+            <div>
+                <button type="button" id="lastNote">Show Last Note</button>
+                <button type="button" id="allNotes">All Notes</button>
+                <div>
+                    <h3 id="lastNoteTitle"></h2>
+                    <p id="lastNoteContent"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="button.js"></script>
+</body>
+
+</html>
