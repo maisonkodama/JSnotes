@@ -1,8 +1,8 @@
 window.addEventListener("load", () => {
-
     var notesList = JSON.parse(localStorage.getItem("allNotes"));
     var noteBody = document.getElementById("notesContainer");
     var gridContent = document.getElementById("allNoteGrid");
+
 
     if (notesList === null) noteBody.innerHTML = "<p>There are no notes</p>"; 
     notesList.forEach(element => {
