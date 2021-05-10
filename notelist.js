@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
         console.log(notesList.indexOf(element)); //check to see the index of current object note
         const noteIndex = notesList.indexOf(element);
         if (element.title == "") {
-            gridContent.innerHTML += "<tr><td>" + noteIndex + "</td><td>" + "*untitled note*" + "</td><td>" + 
+            gridContent.innerHTML += "<tr><td>" + noteIndex + "</td><td>*untitled note*</td><td>" + 
         element.content + "</td><td>" + element.created_at + "</td></tr>";
         } else {
         gridContent.innerHTML += "<tr><td>" + noteIndex + "</td><td>" + element.title + "</td><td>" + 
