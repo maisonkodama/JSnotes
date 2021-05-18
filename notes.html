@@ -16,19 +16,26 @@
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-light">
+            <div class="container-fluid position-sticky">
+                <span class="navbar-brand">pkNotes</span>
+                <a href="/index.html" class="nav-link active me-auto link-dark">Home</a>
+            </div>
+        </nav>
+    </header>
     <main>
         <div class="container mt-3 mb-3">
         <h1>All notes</h1>
-            <a href="/index.html">back</a>
         </div>
         <div id="notesContainer" class="container">
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Note Index</th>
-                        <th>Note Title</th>
-                        <th>Note Content</th>
-                        <th>Date/Time Created</th>
+                        <th scope="col">Note Index</th>
+                        <th scope="col">Note Title</th>
+                        <th scope="col">Note Content</th>
+                        <th scope="col">Date/Time Created</th>
                     </tr>
                 </thead>
                 <tbody id="allNoteGrid">

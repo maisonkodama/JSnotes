@@ -31,13 +31,15 @@ document.getElementById("saveNote").addEventListener("click", () => {
 
     document.getElementById("note").reset(); // resets form after saving
 
+        /* will try to figure this out in built in Bootstrap since it's not playing nice
+
     // gives a layer of feedback to show the user the note has been saved.
     const savedText = document.querySelector(".isSaved");
     savedText.classList.remove("isHidden");
 
     setTimeout(function () {
         savedText.classList.add("isHidden");
-    }, 3000);
+    }, 3000); */
 };
 });
 
@@ -60,11 +62,4 @@ document.getElementById("lastNote").addEventListener("click", () => {
         // displays create a note suggestion
         document.getElementById("lastNoteContent").innerHTML = "Looks like you have no notes. Type one out and save one to see them here!";
     };
-});
-
-//button to jump to all notes page
-
-document.getElementById("allNotes").addEventListener("click", () => {
-    const allNotesPage = window.location.href.replace("index.html", "notes.html");
-    window.location.href = allNotesPage;
 });

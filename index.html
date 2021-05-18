@@ -16,11 +16,19 @@
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-light">
+            <div class="container-fluid position-sticky">
+                <span class="navbar-brand">pkNotes</span>
+                <a href="/notes.html" class="nav-link active me-auto link-dark">All Notes</a>
+            </div>
+        </nav>
+    </header>
     <main>
-        <div class="container  mt-3">
+        <div class="container h-100 mt-3">
             <div class="container">
                 <div class="row">
-                    <h1>pkNotes</h1>
+                    <h1>Write a note</h1>
                 </div>
             </div>
             <div class="container mb-3 border-bottom col-md-8 col-sm-12 noteForm">
@@ -36,14 +44,13 @@
                             spellcheck="true" rows="10"></textarea>
                     </div>
                     <button type="button" id="saveNote" class="btn btn-primary mb-3">Save</button>
+                    <button type="button" id="lastNote" class="btn btn-dark mb-3">Show Last Note</button>
+                    <!-- commenting out for now because bootstrap is not playing nice with custom JS 
                     <span class="isSaved text-success isHidden"> *Saved*</span>
+                    -->
                 </form>
             </div>
             <div class="container">
-                    <div class="container mb-3 col-md-6 col-sm">
-                        <button type="button" id="lastNote" class="btn btn-dark m-1">Show Last Note</button>
-                        <button type="button" id="allNotes" class="btn btn-dark m-1">All Notes</button>
-                    </div>
                 <div class="container col-md-9 col-sm">
                     <h3 id="lastNoteTitle" class="mb-2"></h3>
                     <p id="lastNoteContent"></p>
