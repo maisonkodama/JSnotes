@@ -29,15 +29,21 @@ document.getElementById("saveNote").addEventListener("click", () => {
     allMyNotes.push(savedNote);
     localStorage.setItem("allNotes", JSON.stringify(allMyNotes));
 
-    document.getElementById("note").reset(); // resets form after saving
+    document.getElementById("noteForm").reset(); // resets title after saving
+    document.getElementById("noteContent").value = ""; // resets textarea after saving
 
-    // gives a layer of feedback to show the user the note has been saved.
-    const savedText = document.querySelector(".isSaved");
-    savedText.classList.remove("isHidden");
+    // layer of feedback on save button to show the note has been saved, will replace the text in the following block
+    const save_button = document.getElementById("saveNote");
+    save_button.classList.remove("btn-primary");
+    save_button.classList.add("btn-success");
+    save_button.innerHTML = "Saved";
 
-    setTimeout(function () {
-        savedText.classList.add("isHidden");
-    }, 3000);
+    setTimeout(function() {
+        save_button.classList.remove("btn-success");
+        save_button.classList.add("btn-primary");
+        save_button.innerHTML = "Save";
+         }, 3000);
+
 };
 });
 
@@ -60,11 +66,4 @@ document.getElementById("lastNote").addEventListener("click", () => {
         // displays create a note suggestion
         document.getElementById("lastNoteContent").innerHTML = "Looks like you have no notes. Type one out and save one to see them here!";
     };
-});
-
-//button to jump to all notes page
-
-document.getElementById("allNotes").addEventListener("click", () => {
-    const allNotesPage = window.location.href.replace("index.html", "notes.html");
-    window.location.href = allNotesPage;
 });

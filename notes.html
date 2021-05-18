@@ -6,26 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css">
+    <!-- commenting out for boostrap styles and styles.css 
+        <link rel="stylesheet" href="main.css"> -->
+    <!-- sheet for complimenting bootstrap styles -->
+    <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/7a5d9a758c.js" crossorigin="anonymous"></script>
     <script src="notelist.js"></script>
     <title>All Notes</title>
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-light">
+            <div class="container-fluid position-sticky">
+                <span class="navbar-brand">pkNotes</span>
+                <a href="/index.html" class="nav-link active me-auto link-dark">Home</a>
+            </div>
+        </nav>
+    </header>
     <main>
+        <div class="container mt-3 mb-3">
         <h1>All notes</h1>
-        <div>
-            <a href="/index.html">back</a>
         </div>
-        <div id="notesContainer">
-            <table>
+        <div id="notesContainer" class="container">
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Note Index</th>
-                        <th>Note Title</th>
-                        <th>Note Content</th>
-                        <th>Date/Time Created</th>
+                        <th scope="col">Note Index</th>
+                        <th scope="col">Note Title</th>
+                        <th scope="col">Note Content</th>
+                        <th scope="col">Date/Time Created</th>
                     </tr>
                 </thead>
                 <tbody id="allNoteGrid">
