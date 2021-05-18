@@ -29,17 +29,15 @@ document.getElementById("saveNote").addEventListener("click", () => {
     allMyNotes.push(savedNote);
     localStorage.setItem("allNotes", JSON.stringify(allMyNotes));
 
-    document.getElementById("note").reset(); // resets form after saving
-
-        /* will try to figure this out in built in Bootstrap since it's not playing nice
+    document.getElementById("noteForm").reset(); // resets title after saving
+    document.getElementById("noteContent").value = ""; // resets textarea after saving
 
     // gives a layer of feedback to show the user the note has been saved.
     const savedText = document.querySelector(".isSaved");
-    savedText.classList.remove("isHidden");
+    savedText.classList.remove("d-none");
 
-    setTimeout(function () {
-        savedText.classList.add("isHidden");
-    }, 3000); */
+    setTimeout(function() {
+        savedText.classList.add("d-none"); }, 3000);
 };
 });
 
