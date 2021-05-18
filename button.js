@@ -32,12 +32,18 @@ document.getElementById("saveNote").addEventListener("click", () => {
     document.getElementById("noteForm").reset(); // resets title after saving
     document.getElementById("noteContent").value = ""; // resets textarea after saving
 
-    // gives a layer of feedback to show the user the note has been saved.
-    const savedText = document.querySelector(".isSaved");
-    savedText.classList.remove("d-none");
+    // layer of feedback on save button to show the note has been saved, will replace the text in the following block
+    const save_button = document.getElementById("saveNote");
+    save_button.classList.remove("btn-primary");
+    save_button.classList.add("btn-success");
+    save_button.innerHTML = "Saved";
 
     setTimeout(function() {
-        savedText.classList.add("d-none"); }, 3000);
+        save_button.classList.remove("btn-success");
+        save_button.classList.add("btn-primary");
+        save_button.innerHTML = "Save";
+         }, 3000);
+
 };
 });
 
