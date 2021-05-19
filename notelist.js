@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
     if (notesList === null) {
         noteBody.innerHTML = "<p class='lead'>There are no notes</p>"
     } else {
-        document.getElementById("deleteAll").classList.remove("d-none");
+        document.getElementById("deleteAll").classList.remove("d-none"); //displays button to delete notes
         notesList.forEach(element => {
         const noteIndex = notesList.indexOf(element);
         if (element.title == "") {
@@ -20,6 +20,7 @@ window.addEventListener("load", () => {
 };
 });
 
+// button to delete all notes
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("deleteAll").addEventListener("click", () => {
         var confirmAllDelete = confirm("Confirming will delete all of your notes. This action can not be undone. Continue?");
