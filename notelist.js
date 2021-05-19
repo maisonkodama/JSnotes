@@ -3,10 +3,11 @@ window.addEventListener("load", () => {
     var noteBody = document.getElementById("notesContainer");
     var gridContent = document.getElementById("allNoteGrid");
 
-
-    if (notesList === null) noteBody.innerHTML = "<p>There are no notes</p>"; 
-    notesList.forEach(element => {
-        console.log(notesList.indexOf(element)); //check to see the index of current object note
+    if (notesList === null) {
+        noteBody.innerHTML = "<p class='lead'>There are no notes</p>"
+    } else {
+        document.getElementById("deleteAll").classList.remove("d-none");
+        notesList.forEach(element => {
         const noteIndex = notesList.indexOf(element);
         if (element.title == "") {
             gridContent.innerHTML += "<tr><td>" + noteIndex + "</td><td>*untitled note*</td><td>" + 
@@ -15,6 +16,14 @@ window.addEventListener("load", () => {
         gridContent.innerHTML += "<tr><td>" + noteIndex + "</td><td>" + element.title + "</td><td>" + 
         element.content + "</td><td>" + element.created_at + "</td></tr>";
         };
-    });
+    })
+};
+});
 
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("deleteAll").addEventListener("click", () => {
+        var confirmAllDelete = confirm("Confirming will delete all of your notes. This action can not be undone. Continue?");
+        if (confirmAllDelete) localStorage.removeItem("allNotes");
+        location.reload();
+    });
 });
