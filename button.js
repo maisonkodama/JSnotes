@@ -17,7 +17,7 @@ document.getElementById("saveNote").addEventListener("click", () => {
     const savedNote = {
         title: titleValue,
         content: contentValue,
-        created_at: new Date()
+        created_at: Date().toString()
     };
 
     // prints values to console to check if object is initiated with expected values

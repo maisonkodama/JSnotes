@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
     var gridContent = document.getElementById("allNoteGrid");
 
     if (notesList === null) {
-        noteBody.innerHTML = "<p class='lead'>There are no notes</p>"
+        noteBody.innerHTML = "<p class='lead'>There are no notes. <a href='/index.html' class='text-decoration-none'>Click here to create one.</a></p>"
     } else {
         document.getElementById("deleteAll").classList.remove("d-none"); //displays button to delete notes
         notesList.forEach(element => {
