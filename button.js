@@ -42,7 +42,7 @@ document.getElementById("saveNote").addEventListener("click", () => {
         save_button.classList.remove("btn-success");
         save_button.classList.add("btn-primary");
         save_button.innerHTML = "Save";
-         }, 3000);
+         }, 1500);
 
 };
 });
