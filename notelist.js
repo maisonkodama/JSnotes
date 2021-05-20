@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
-    var notesList = JSON.parse(localStorage.getItem("allNotes"));
-    var noteBody = document.getElementById("notesContainer");
-    var gridContent = document.getElementById("allNoteGrid");
+    let notesList = JSON.parse(localStorage.getItem("allNotes"));
+    let noteBody = document.getElementById("notesContainer");
+    let gridContent = document.getElementById("allNoteGrid");
 
     if (notesList === null) {
         noteBody.innerHTML = "<p class='lead'>There are no notes. <a href='/index.html' class='text-decoration-none'>Click here to create one.</a></p>"
@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
 // button to delete all notes
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("deleteAll").addEventListener("click", () => {
-        var confirmAllDelete = confirm("Confirming will delete all of your notes. This action can not be undone. Continue?");
+        let confirmAllDelete = confirm("Confirming will delete all of your notes. This action can not be undone. Continue?");
         if (confirmAllDelete) localStorage.removeItem("allNotes");
         location.reload();
     });

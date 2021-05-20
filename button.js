@@ -6,11 +6,11 @@ document.getElementById("saveNote").addEventListener("click", () => {
     } else {
 
     // declares note values
-    var titleValue = document.getElementById("titleText").value;
-    var contentValue = document.getElementById("noteContent").value;
+    let titleValue = document.getElementById("titleText").value;
+    let contentValue = document.getElementById("noteContent").value;
 
     // gets list of notes parsed into JSON, if no list exists, create empty array
-    var allMyNotes = JSON.parse(localStorage.getItem("allNotes"));
+    let allMyNotes = JSON.parse(localStorage.getItem("allNotes"));
     if (allMyNotes === null) allMyNotes = [];
 
     // saves form as object. using value does not provide any data validation
@@ -54,8 +54,6 @@ document.getElementById("lastNote").addEventListener("click", () => {
     // check to see if there are notes saved in local storage
     if (localStorage.getItem("pkNote") !== null) {
         let myLastNote = JSON.parse(localStorage.getItem("pkNote"));
-
-        console.log(myLastNote);
 
         // displays note
         document.getElementById("lastNoteTitle").innerHTML = myLastNote.title;
