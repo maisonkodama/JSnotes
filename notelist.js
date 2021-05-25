@@ -1,7 +1,5 @@
 window.addEventListener("load", () => {
     let notesList = JSON.parse(localStorage.getItem("allNotes"));
-    let noteBody = document.getElementById("notesContainer");
-    let gridContent = document.getElementById("allNoteGrid");
     let cardContent = document.getElementById("noteCards");
 
     if (notesList === null) {
@@ -11,13 +9,15 @@ window.addEventListener("load", () => {
         notesList.forEach(element => {
             const noteIndex = notesList.indexOf(element);
             if (element.title == "") {
-                cardContent.innerHTML += "<div class='col-md-3 h-75 maxh-500 of-scroll'><div class='p3'><h2 class='text-primary'>*untitled note*</h2>" 
-                + "<span class='form-text fsize-smol'>" + element.created_at + "</span></div>"
-                + "<div><p class='pt-1 pb-1'>" + element.content + "</p></div></div>";
+                cardContent.innerHTML += "<div class='col-md-4 maxh-500 of-scroll'><div class='m-1 p-3 rounded-3 bg-dark text-light'><div><h2>*untitled note*</h2>" 
+                + "<span class='text-white fsize-smol'>" + element.created_at + "</span></div>"
+                + "<div><p class='pt-1 pb-1'>" + element.content + "</p></div>"
+                + "</div></div>";
+
             } else {
-                cardContent.innerHTML += "<div class='col-md-3 h-75 maxh-500 of-scroll'><div class='p3'><h2 class='text-primary'>" + element.title + "</h2>"
-                + "<span class='form-text fsize-smol'>" + element.created_at + "</span></div>"
-                + "<div><p class='pt-1 pb-1'>" + element.content + "</p></div></div>";
+                cardContent.innerHTML += "<div class='col-md-4 maxh-500 of-scroll'><div class='m-1 p-3 rounded-3 bg-dark text-light'><div><h2>" + element.title + "</h2>"
+                + "<span class='text-white fsize-smol'>" + element.created_at + "</span></div>"
+                + "<div><p class='pt-1 pb-1'>" + element.content + "</p></div></div></div>";
             };
         });
 };
