@@ -43,7 +43,6 @@ document.getElementById("saveNote").addEventListener("click", () => {
         save_button.classList.add("btn-primary");
         save_button.innerHTML = "Save";
          }, 1500);
-
 };
 });
 
