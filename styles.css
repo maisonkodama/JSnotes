@@ -1,0 +1,12 @@
+.of-scroll {
+    overflow: scroll;
+}
+
+.maxh-500 {
+    min-height: 300px;
+    max-height: 300px;
+}
+
+.fsize-smol {
+    font-size: .75em;
+}
