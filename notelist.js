@@ -12,12 +12,18 @@ window.addEventListener("load", () => {
                 cardContent.innerHTML += "<div class='col-md-4 maxh-500 of-scroll'><div class='m-1 p-3 rounded-3 bg-dark text-light'><div><h2>*untitled note*</h2>" 
                 + "<span class='text-white fsize-smol'>" + element.created_at + "</span></div>"
                 + "<div><p class='pt-1 pb-1'>" + element.content + "</p></div>"
-                + "</div></div>";
+                + "<button type='button' id='delThis' class='btn btn-danger'>Delete</button>" + "</div></div>";
 
             } else {
                 cardContent.innerHTML += "<div class='col-md-4 maxh-500 of-scroll'><div class='m-1 p-3 rounded-3 bg-dark text-light'><div><h2>" + element.title + "</h2>"
                 + "<span class='text-white fsize-smol'>" + element.created_at + "</span></div>"
                 + "<div><p class='pt-1 pb-1'>" + element.content + "</p></div></div></div>";
+            };
+            let deleteThis = document.getElementById("delThis");
+            if (deleteThis) {
+                deleteThis.addEventListener("click", () => {
+                console.log(noteIndex);
+             });
             };
         });
 };
@@ -31,3 +37,18 @@ document.addEventListener("DOMContentLoaded", () => {
         location.reload();
     });
 });
+
+/*
+
+not working, deleting last note
+
+let deleteThis = document.getElementById("delThis");
+if (deleteThis) {
+    deleteThis.addEventListener("click", () => {
+    notesList.splice(noteIndex, 1);
+    localStorage.setItem("allNotes", JSON.stringify(notesList));
+    location.reload();
+ });
+};
+
+*/
