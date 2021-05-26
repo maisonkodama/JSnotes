@@ -16,4 +16,4 @@ Known bugs are in the issues section 😅
 - [ ] Edit a note ✍️
 - [ ] Paginate all notes 📓
 
-*For this project I am not using any server-side scripting or alternative database and will create a new repo if I do*
+*For this project I am not using any server-side scripts or alternative databases and will create a new repo if I do*
