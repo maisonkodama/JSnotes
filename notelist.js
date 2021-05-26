@@ -11,24 +11,16 @@ window.addEventListener("load", () => {
             if (element.title == "") {
                 cardContent.innerHTML += "<div class='col-md-4 maxh-500 of-scroll'><div class='m-1 p-3 rounded-3 bg-dark text-light'><div><h2>*untitled note*</h2>" 
                 + "<span class='text-white fsize-smol'>" + element.created_at + "</span></div>"
-                + "<div><p class='pt-1 pb-1'>" + element.content + "</p></div>"
-                // "delete button" + "<button type='button' id='delThis' class='btn btn-danger'>Delete</button>" 
+                + "<div><p class='pt-1 pb-1'>" + element.content + "</p>"
+                + "<button type='button'" + "id='indexAt-" + noteIndex + "'" + " class='btn btn-danger del-btn'" + "onClick='delClick(this.id)'" + ">Delete</button></div>" 
                 + "</div></div>";
-
             } else {
                 cardContent.innerHTML += "<div class='col-md-4 maxh-500 of-scroll'><div class='m-1 p-3 rounded-3 bg-dark text-light'><div><h2>" + element.title + "</h2>"
                 + "<span class='text-white fsize-smol'>" + element.created_at + "</span></div>"
-                + "<div><p class='pt-1 pb-1'>" + element.content + "</p></div></div></div>";
+                + "<div><p class='pt-1 pb-1'>" + element.content + "</p>"
+                + "<button type='button'" + "id='indexAt-" + noteIndex + "'" + " class='btn btn-danger del-btn'" + "onClick='delClick(this.id)'" + ">Delete</button></div>"
+                + "</div></div>";
             };
-            
-            /* script to show current noteIndex
-            let deleteThis = document.getElementById("delThis");
-            if (deleteThis) {
-                deleteThis.addEventListener("click", () => {
-                console.log(noteIndex);
-             });
-            };
-            */
         });
 };
 });
@@ -42,17 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-/*
-script to delete 'this' note
-not working, deleting last note instead as variable holding index is iterated on
 
-let deleteThis = document.getElementById("delThis");
-if (deleteThis) {
-    deleteThis.addEventListener("click", () => {
-    notesList.splice(noteIndex, 1);
+// delete THIS note button (referring to delete button in note card deleting the note it is in)
+
+let delClick = (currentID) => {
+    const notesList = JSON.parse(localStorage.getItem("allNotes"));
+    let thisDelButton = document.getElementById(currentID);
+    let thisCurrentNote = thisDelButton.previousSibling.innerHTML;
+    indexToDelete = notesList.findIndex(note => note.content === thisCurrentNote);
+    notesList.splice(indexToDelete, 1);
     localStorage.setItem("allNotes", JSON.stringify(notesList));
     location.reload();
- });
 };
-
-*/
