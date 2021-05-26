@@ -34,15 +34,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
 // delete THIS note button (referring to delete button in note card deleting the note it is in)
 
 let delClick = (currentID) => {
     const notesList = JSON.parse(localStorage.getItem("allNotes"));
     let thisDelButton = document.getElementById(currentID);
     let thisCurrentNote = thisDelButton.previousSibling.innerHTML;
+
+
     indexToDelete = notesList.findIndex(note => note.content === thisCurrentNote);
+    // if statement to remove allNotes from local storage if notesList length == 1
+    if (notesList.length == 1) {
+        localStorage.removeItem("allNotes");
+    } else {
     notesList.splice(indexToDelete, 1);
     localStorage.setItem("allNotes", JSON.stringify(notesList));
+    };
     location.reload();
 };
