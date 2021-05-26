@@ -12,13 +12,13 @@ window.addEventListener("load", () => {
                 cardContent.innerHTML += "<div class='col-md-4 maxh-500 of-scroll'><div class='m-1 p-3 rounded-3 bg-dark text-light'><div><h2>*untitled note*</h2>" 
                 + "<span class='text-white fsize-smol'>" + element.created_at + "</span></div>"
                 + "<div><p class='pt-1 pb-1'>" + element.content + "</p>"
-                + "<button type='button'" + "id='indexAt-" + noteIndex + "'" + " class='btn btn-danger del-btn'" + "onClick='delClick(this.id)'" + ">Delete</button></div>" 
+                + "<button type='button'" + "id='indexAt-" + noteIndex + "'" + " class='btn btn-danger'" + "onClick='delClick(this.id)'" + ">Delete</button></div>" 
                 + "</div></div>";
             } else {
                 cardContent.innerHTML += "<div class='col-md-4 maxh-500 of-scroll'><div class='m-1 p-3 rounded-3 bg-dark text-light'><div><h2>" + element.title + "</h2>"
                 + "<span class='text-white fsize-smol'>" + element.created_at + "</span></div>"
                 + "<div><p class='pt-1 pb-1'>" + element.content + "</p>"
-                + "<button type='button'" + "id='indexAt-" + noteIndex + "'" + " class='btn btn-danger del-btn'" + "onClick='delClick(this.id)'" + ">Delete</button></div>"
+                + "<button type='button'" + "id='indexAt-" + noteIndex + "'" + " class='btn btn-danger'" + "onClick='delClick(this.id)'" + ">Delete</button></div>"
                 + "</div></div>";
             };
         });
