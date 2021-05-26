@@ -62,5 +62,5 @@ document.getElementById("lastNote").addEventListener("click", () => {
         console.log("Looks like you have no notes. Type one out and save one to see them here!");
         // displays create a note suggestion
         document.getElementById("lastNoteContent").innerHTML = "Looks like you have no notes. Type one out and save one to see them here!";
-    };
-});
+    }
+})
