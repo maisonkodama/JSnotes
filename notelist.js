@@ -51,4 +51,4 @@ let delClick = (currentID) => {
     localStorage.setItem("allNotes", JSON.stringify(notesList));
     };
     location.reload();
-};
+}
