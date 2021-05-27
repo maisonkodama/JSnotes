@@ -21,9 +21,9 @@ document.getElementById("saveNote").addEventListener("click", () => {
             created_at: Date().toString(),
         };
 
-        if (allMyNotes && allMyNotes.length > 1) {
+        if (allMyNotes && allMyNotes.length > 0) {
                 let lastNoteID = allMyNotes[allMyNotes.length - 1].id;
-                console.log(lastNoteID);
+                console.log("last note ID " + lastNoteID);
                 let thisNoteID = lastNoteID + 1;
                 savedNote.id = thisNoteID
         };
