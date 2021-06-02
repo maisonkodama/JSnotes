@@ -10,10 +10,7 @@ This is a beginner project for me and is in its first stage.
 * Delete a specific note
 * Delete all notes
 
-Known bugs are in the issues section 😅
-
 **Future features**
 - [ ] Edit a note ✍️
+- [ ] Archive a note 🗄️
 - [ ] Paginate all notes 📓
-
-*For this project I am not using any server-side scripts or alternative databases and will create a new repo if I do*
