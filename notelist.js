@@ -12,13 +12,14 @@ window.addEventListener("load", () => {
                 cardContent.innerHTML += "<div class='col-md-4 maxh-500 of-scroll'><div class='m-1 p-3 rounded-3 bg-dark text-light'><div><h2>*untitled note*</h2>" 
                 + "<span class='text-white fsize-smol'>" + element.created_at + "</span></div>"
                 + "<div><p class='pt-1 pb-1'>" + element.content + "</p>"
-                + "<span class='text-white fsize-smol'>" + element.id + "</span>" 
+                + "<p class='text-white fsize-smol'>Note ID: " + element.id + "</p>" 
                 + "<button type='button'" + "id='indexAt-" + noteIndex + "'" + " class='btn btn-danger'" + "onClick='delClick(this.id)'" + ">Delete</button></div>" 
                 + "</div></div>";
             } else {
                 cardContent.innerHTML += "<div class='col-md-4 maxh-500 of-scroll'><div class='m-1 p-3 rounded-3 bg-dark text-light'><div><h2>" + element.title + "</h2>"
                 + "<span class='text-white fsize-smol'>" + element.created_at + "</span></div>"
                 + "<div><p class='pt-1 pb-1'>" + element.content + "</p>"
+                + "<p class='text-white fsize-smol'>Note ID: " + element.id + "</p>" 
                 + "<button type='button'" + "id='indexAt-" + noteIndex + "'" + " class='btn btn-danger'" + "onClick='delClick(this.id)'" + ">Delete</button></div>"
                 + "</div></div>";
             };
@@ -46,7 +47,7 @@ let delClick = (currentID) => {
     /* commenting this block to use the note ID inner html to find the index
     indexToDelete = notesList.findIndex(note => note.content === thisCurrentNote);
     */
-    indexToDelete = notesList.findIndex(note => note.id.toString() === thisCurrentNote);
+    indexToDelete = notesList.findIndex(note => "Note ID: " +note.id.toString() === thisCurrentNote);
     // if statement to remove allNotes from local storage if notesList length == 1
     if (notesList.length == 1) {
         localStorage.removeItem("allNotes");
