@@ -43,7 +43,7 @@ let delClick = (currentID) => {
     let thisDelButton = document.getElementById(currentID);
     let thisCurrentNote = thisDelButton.previousSibling.innerHTML;
 
-    indexToDelete = notesList.findIndex(note => "Note ID: " +note.id.toString() === thisCurrentNote);
+    indexToDelete = notesList.findIndex(note => "Note ID: " + note.id.toString() === thisCurrentNote);
     // if statement to remove allNotes from local storage if notesList length == 1
     if (notesList.length == 1) {
         localStorage.removeItem("allNotes");
