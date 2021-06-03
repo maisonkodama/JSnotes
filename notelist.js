@@ -64,4 +64,4 @@ let eClick = (currentID) => {
     localStorage.setItem("editIndex", JSON.stringify(indexToEdit));
 
     // add page link switcheroo to edit page so edit page can render values of the note into the text fields of the form
-};
+}
