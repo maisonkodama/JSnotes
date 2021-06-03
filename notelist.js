@@ -62,4 +62,6 @@ let eClick = (currentID) => {
 
     let indexToEdit = notesList.findIndex(note => "Note ID: " + note.id.toString() === thisCurrentNote);
     localStorage.setItem("editID", JSON.stringify(indexToEdit));
+
+    // add page link switcheroo to edit page so edit page can render values of the note into the text fields of the form
 };
