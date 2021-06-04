@@ -23,5 +23,23 @@ let saveEditBtn = document.getElementById("editNoteBtn");
 saveEditBtn.addEventListener("click", () => {
     let titleValue = document.getElementById("editTitleText").value;
     let contentValue = document.getElementById("editNoteContent").value;
-    console.log(`title value: ${titleValue}, ` + `content value: ${contentValue}`)
+    console.log(`title value: ${titleValue}, ` + `content value: ${contentValue}`) //prints editable values to console
+    
+    const indexToEdit = JSON.parse(localStorage.getItem("editIndex"));
+    let allNotes = JSON.parse(localStorage.getItem("allNotes"));
+    let noteToEdit = allNotes[indexToEdit];
+    
+        noteToEdit.title = titleValue;
+        noteToEdit.content = contentValue;
+        noteToEdit.updated_at = Date().toString();
+    
+    console.log(noteToEdit);
+    console.log(allNotes);
+
+    localStorage.setItem("allNotes", JSON.stringify(allNotes));
+    
+    /* restore this if we need to remove the index and go back to notes page after saving
+    localStorage.removeItem("editIndex");
+    window.location.replace("/notes.html")
+    */
 })
