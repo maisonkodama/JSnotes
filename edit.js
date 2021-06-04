@@ -37,6 +37,17 @@ saveEditBtn.addEventListener("click", () => {
     console.log(allNotes);
 
     localStorage.setItem("allNotes", JSON.stringify(allNotes));
+
+        // layer of feedback on save button to show the note has been saved, will replace the text in the following block
+        saveEditBtn.classList.remove("btn-primary");
+        saveEditBtn.classList.add("btn-success");
+        saveEditBtn.innerHTML = "Saved";
+
+        setTimeout(() => {
+            saveEditBtn.classList.remove("btn-success");
+            saveEditBtn.classList.add("btn-primary");
+            saveEditBtn.innerHTML = "Save changes";
+        }, 1500);
     
     /* restore this if we need to remove the index and go back to notes page after saving
     localStorage.removeItem("editIndex");
