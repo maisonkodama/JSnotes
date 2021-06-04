@@ -21,7 +21,8 @@ window.addEventListener("load", () => {
                 + "<span class='text-white fsize-smol'>" + element.created_at + "</span></div>"
                 + "<div><p class='pt-1 pb-1'>" + element.content + "</p>"
                 + "<p class='text-white fsize-smol'>Note ID: " + element.id + "</p>" 
-                + "<button type='button'" + "id='delAtIndex-" + noteIndex + "'" + " class='btn btn-danger btn-sm'" + "onClick='delClick(this.id)'" + ">Delete</button></div>"
+                + "<button type='button'" + "id='delAtIndex-" + noteIndex + "'" + " class='btn btn-danger btn-sm'" + "onClick='delClick(this.id)'" + ">Delete</button>"
+                + "<button type='button'" + "id='editAtIndex-" + noteIndex + "'" + " class='btn btn-primary btn-sm ms-1'" + "onClick='eClick(this.id)'" + ">Edit</button></div>"
                 + "</div></div>";
             };
         });
@@ -64,4 +65,5 @@ let eClick = (currentID) => {
     localStorage.setItem("editIndex", JSON.stringify(indexToEdit));
 
     // add page link switcheroo to edit page so edit page can render values of the note into the text fields of the form
+    window.location.replace("/editnote.html");
 }
