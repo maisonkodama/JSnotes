@@ -11,6 +11,6 @@ This is a beginner project for me and is in its first stage.
 * Delete all notes
 
 **Future features**
-- [ ] Edit a note ✍️
+- [x] Edit a note ✍️
 - [ ] Archive a note 🗄️
 - [ ] Paginate all notes 📓
